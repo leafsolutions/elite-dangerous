@@ -1,0 +1,57 @@
+{"timestamp": "2026-09-27T20:00:00Z", "event": "Fileheader", "part": 1, "language": "English/UK", "Odyssey": true, "gameversion": "4.1.0.0", "build": "r000000/r0 "}
+{"timestamp": "2026-09-27T20:00:00Z", "event": "Commander", "FID": "F0000000", "Name": "Vanni"}
+{"timestamp": "2026-09-27T20:00:00Z", "event": "LoadGame", "FID": "F0000000", "Commander": "Vanni", "Horizons": true, "Odyssey": true, "Ship": "krait_mkii", "Ship_Localised": "Krait Mk II", "ShipID": 7, "ShipName": "Rocinante", "ShipIdent": "RC-01", "FuelLevel": 28.0, "FuelCapacity": 32.0, "GameMode": "Solo", "Credits": 48250000, "Loan": 0}
+{"timestamp": "2026-09-27T20:00:01Z", "event": "Location", "Docked": true, "StationName": "Jameson Memorial", "StationType": "Orbis", "StarSystem": "Shinrarta Dezhra"}
+{"timestamp": "2026-09-27T20:00:01Z", "event": "Status", "Flags": 16842765, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 28.0, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:00:02Z", "event": "Music", "MusicTrack": "Starport"}
+{"timestamp": "2026-09-27T20:00:40Z", "event": "Undocked", "StationName": "Jameson Memorial", "StationType": "Orbis"}
+{"timestamp": "2026-09-27T20:00:40Z", "event": "Status", "Flags": 16842760, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 28.0, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:01:10Z", "event": "StartJump", "JumpType": "Supercruise"}
+{"timestamp": "2026-09-27T20:01:10Z", "event": "Status", "Flags": 16908296, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 28.0, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:01:15Z", "event": "SupercruiseEntry", "StarSystem": "Shinrarta Dezhra"}
+{"timestamp": "2026-09-27T20:01:15Z", "event": "Status", "Flags": 16777240, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 28.0, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:01:16Z", "event": "Music", "MusicTrack": "Supercruise"}
+{"timestamp": "2026-09-27T20:01:30Z", "event": "StartJump", "JumpType": "Hyperspace", "StarSystem": "Deciat", "StarClass": "K"}
+{"timestamp": "2026-09-27T20:01:30Z", "event": "Status", "Flags": 1090519064, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 28.0, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:01:50Z", "event": "FSDJump", "StarSystem": "Deciat", "JumpDist": 14.531, "FuelUsed": 1.9, "FuelLevel": 26.1}
+{"timestamp": "2026-09-27T20:01:50Z", "event": "Status", "Flags": 16777240, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 26.1, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:02:00Z", "event": "Status", "Flags": 16779288, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 26.5, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:02:30Z", "event": "ReservoirReplenished", "FuelMain": 32.0, "FuelReservoir": 0.63}
+{"timestamp": "2026-09-27T20:02:35Z", "event": "Status", "Flags": 16777240, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 32.0, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:02:40Z", "event": "StartJump", "JumpType": "Hyperspace", "StarSystem": "Wolf 397", "StarClass": "M"}
+{"timestamp": "2026-09-27T20:02:40Z", "event": "Status", "Flags": 1090519064, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 32.0, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:03:00Z", "event": "FSDJump", "StarSystem": "Wolf 397", "JumpDist": 18.072, "FuelUsed": 2.4, "FuelLevel": 29.6}
+{"timestamp": "2026-09-27T20:03:00Z", "event": "Status", "Flags": 16777240, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.6, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:06:30Z", "event": "Status", "Flags": 29360152, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.5, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:06:31Z", "event": "Music", "MusicTrack": "Interdiction"}
+{"timestamp": "2026-09-27T20:06:45Z", "event": "Interdicted", "Submitted": false, "Interdictor": "Hired pirate", "Interdictor_Localised": "Hired pirate", "IsPlayer": false}
+{"timestamp": "2026-09-27T20:06:45Z", "event": "Status", "Flags": 21037128, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.5, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:06:46Z", "event": "Music", "MusicTrack": "Combat_Dogfight"}
+{"timestamp": "2026-09-27T20:06:50Z", "event": "UnderAttack", "Target": "You"}
+{"timestamp": "2026-09-27T20:07:05Z", "event": "ShieldState", "ShieldsUp": false}
+{"timestamp": "2026-09-27T20:07:05Z", "event": "Status", "Flags": 21037120, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.5, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:07:10Z", "event": "HullDamage", "Health": 0.712, "PlayerPilot": true, "Fighter": false}
+{"timestamp": "2026-09-27T20:07:14Z", "event": "HullDamage", "Health": 0.691, "PlayerPilot": true, "Fighter": false}
+{"timestamp": "2026-09-27T20:07:20Z", "event": "HeatWarning"}
+{"timestamp": "2026-09-27T20:07:20Z", "event": "Status", "Flags": 22085696, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.4, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:07:30Z", "event": "HullDamage", "Health": 0.463, "PlayerPilot": true, "Fighter": false}
+{"timestamp": "2026-09-27T20:07:32Z", "event": "Status", "Flags": 21037120, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.4, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:07:50Z", "event": "ShieldState", "ShieldsUp": true}
+{"timestamp": "2026-09-27T20:07:50Z", "event": "Status", "Flags": 21037128, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.4, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:08:08Z", "event": "Bounty", "Target": "krait_light", "Reward": 182000, "VictimFaction": "Wolf 397 Pirates"}
+{"timestamp": "2026-09-27T20:08:10Z", "event": "Music", "MusicTrack": "Exploration"}
+{"timestamp": "2026-09-27T20:08:10Z", "event": "Status", "Flags": 16777288, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.4, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:08:30Z", "event": "StartJump", "JumpType": "Supercruise"}
+{"timestamp": "2026-09-27T20:08:30Z", "event": "Status", "Flags": 16908296, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.3, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:08:35Z", "event": "SupercruiseEntry", "StarSystem": "Wolf 397"}
+{"timestamp": "2026-09-27T20:08:35Z", "event": "Status", "Flags": 16777240, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.3, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:08:36Z", "event": "Music", "MusicTrack": "Supercruise"}
+{"timestamp": "2026-09-27T20:09:30Z", "event": "SupercruiseExit", "StarSystem": "Wolf 397", "Body": "Kittredge Terminal", "BodyType": "Station"}
+{"timestamp": "2026-09-27T20:09:30Z", "event": "Status", "Flags": 16842760, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.1, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:09:40Z", "event": "DockingRequested", "StationName": "Kittredge Terminal", "StationType": "Coriolis"}
+{"timestamp": "2026-09-27T20:09:42Z", "event": "DockingGranted", "LandingPad": 12, "StationName": "Kittredge Terminal", "StationType": "Coriolis"}
+{"timestamp": "2026-09-27T20:10:30Z", "event": "Docked", "StationName": "Kittredge Terminal", "StationType": "Coriolis", "StarSystem": "Wolf 397"}
+{"timestamp": "2026-09-27T20:10:30Z", "event": "Status", "Flags": 16842765, "Pips": [4, 4, 4], "FireGroup": 0, "GuiFocus": 0, "Fuel": {"FuelMain": 29.1, "FuelReservoir": 0.63}, "Cargo": 0.0, "LegalState": "Clean", "Balance": 48250000}
+{"timestamp": "2026-09-27T20:10:31Z", "event": "Music", "MusicTrack": "Starport"}
+{"timestamp": "2026-09-27T20:10:40Z", "event": "MissionCompleted", "Faction": "Wolf 397 Holdings", "Name": "Mission_Delivery_name", "LocalisedName": "Deliver 12 units of Data to Kittredge Terminal", "Reward": 125000}
+{"timestamp": "2026-09-27T20:10:50Z", "event": "RepairAll", "Cost": 41230}
