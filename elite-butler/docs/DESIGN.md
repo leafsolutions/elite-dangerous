@@ -1,6 +1,8 @@
-# Majordomo — a personality-driven flight companion for Elite Dangerous
+# Elite Butler — a personality-driven flight companion for Elite Dangerous
 
-*Design document · v0.2 · 2026-09-29*
+*Design document · v0.3 · 2026-09-29*
+
+*Changes in v0.3: project renamed from Majordomo to Elite Butler; non-affiliation notice added (§11).*
 
 *Changes in v0.2: the tiered response model (when the companion uses a language model and when it does not) is specified in `AI-TIERS.md`; this document now points to it from the architecture, rendering, conversation, latency and roadmap sections.*
 
@@ -32,7 +34,7 @@ The companion **advises and entertains; it never flies**. It sends no input to t
 | Journal | Line-by-line JSON log files the game writes while playing, one event per line, in `%USERPROFILE%\Saved Games\Frontier Developments\Elite Dangerous\` |
 | `Status.json` | File in the same folder, rewritten by the game whenever the ship's live state changes (flags for shields, supercruise, heat, fuel, danger…) |
 | `NavRoute.json` | File in the same folder, written when a route is plotted: the list of systems and star classes ahead |
-| COVAS | Cockpit Voice Assistant: the game's own ship voice. Majordomo is, in lore terms, a COVAS with a personality |
+| COVAS | Cockpit Voice Assistant: the game's own ship voice. Elite Butler is, in lore terms, a COVAS with a personality |
 | STT | Speech-to-text: turns the commander's voice into text |
 | TTS | Text-to-speech: turns the companion's lines into audio |
 | LLM | Large language model, e.g. Claude, used for free conversation and rare events |
@@ -246,6 +248,7 @@ Replies to the commander (T1 and T2) are described in section 8.
 
 ## 11. Legal and fair-play notes
 
+- **Unofficial fan tool**: Elite Butler is free and not affiliated with or endorsed by Frontier Developments. "Elite" and "Elite Dangerous" are Frontier's trademarks; the README and the app's about screen say so.
 - **No automation of play**: the tool reads files the game writes for third-party tools, and never sends input.
 - **Original characters only**: archetypes are free to use; specific manga characters, names and likenesses are not.
 - **Voices**: only licensed stock voices or voices made with the consent of the person; no clones of actors.
@@ -256,7 +259,7 @@ Replies to the commander (T1 and T2) are described in section 8.
 
 | Milestone | Scope | Done when |
 |---|---|---|
-| **M0 Skeleton** | Watcher, normaliser, Director, template renderer, console voice, replay mode, three personas, tests | `majordomo replay sample.log` prints a believable session |
+| **M0 Skeleton** | Watcher, normaliser, Director, template renderer, console voice, replay mode, three personas, tests | `elite-butler replay sample.log` prints a believable session |
 | M1 Voice | Piper TTS, preemption, audio device selection | You hear Ashford in-game |
 | M2 Director tuning | Modes from `Music` and status flags, budget tuning, silence command, conditional lines, utterance log with tier and latency | A 1-hour session feels right |
 | M3 Cached variants | Offline generator plus Fact guard; joke, lore and idle banks | 30 variants per event per persona |

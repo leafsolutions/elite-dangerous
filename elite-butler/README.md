@@ -1,15 +1,17 @@
-# Majordomo
+# Elite Butler
 
 A personality-driven flight companion for Elite Dangerous. It listens to the game's Journal
 files, comments on what happens in the voice of a character you choose, and knows when to
 keep quiet. It **advises and entertains; it never flies**: no input is ever sent to the game.
 
-See [`docs/DESIGN.md`](docs/DESIGN.md) for the full design. This is milestone **M0**.
+See [`docs/DESIGN.md`](docs/DESIGN.md) for the full design. This folder holds the Python
+prototype, milestone **M0**. Its package and command keep the project's original name,
+`majordomo`; the .NET solution uses the new name (`EliteButler.*`).
 
 ## Quick start (Windows)
 
 ```powershell
-cd D:\dev\elite\majordomo
+cd elite-butler                 # from the repository root
 py -3.12 -m venv .venv
 .venv\Scripts\activate
 pip install -e ".[dev,tts]"
@@ -57,3 +59,8 @@ pytest
 
 M1 voice (Piper, interruption) · M2 Director tuning · M3 cached line variants from a
 language model · M4 memory · M5 conversation · M6 persona studio. Details in the design doc.
+
+## Disclaimer
+
+Elite Butler is a free, unofficial fan tool. It is not affiliated with or endorsed by
+Frontier Developments. "Elite" and "Elite Dangerous" are trademarks of Frontier Developments plc.

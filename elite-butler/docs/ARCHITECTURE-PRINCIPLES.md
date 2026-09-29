@@ -1,7 +1,8 @@
-# Majordomo — Architecture principles
+# Elite Butler — Architecture principles
 
-*v0.3 · 2026-09-29 · Draft for discussion · Companion to `DESIGN.md` (v0.2) and `AI-TIERS.md`*
+*v0.4 · 2026-09-29 · Draft for discussion · Companion to `DESIGN.md` (v0.3) and `AI-TIERS.md` (v0.2)*
 
+*Changes in v0.4: project renamed from Majordomo to Elite Butler; modules become `EliteButler.*`.*
 *Changes in v0.3: D1 decided (personal side project and learning lab, public repository); AP-17 reframed around experiments; new AP-19 on secrets and personal data in a public repository; AP-18 packaging relaxed for personal use.*
 *Changes in v0.2: AP-18 allows Python (or other languages) for specific capabilities, as helper processes behind the same contracts; AP-03, the stack table and the module sketch updated accordingly.*
 
@@ -9,7 +10,7 @@
 
 ### Project goals
 
-Majordomo is a personal side project with two goals:
+Elite Butler is a personal side project with two goals:
 
 1. **Fun**: a companion that makes playing Elite Dangerous more enjoyable.
 2. **Learning**: a lab to experiment with non-trivial AI architectures and build lasting knowledge.
@@ -18,13 +19,13 @@ The GitHub repository is **public**. The community may pick the project up one d
 
 ### Why principles
 
-Majordomo moves from a Python prototype to a structured C#/.NET solution. Before choosing libraries or drawing components, this document fixes the **principles** that every architectural decision must respect. When two designs are possible, the one that better satisfies these principles wins. When a principle has to be broken, the exception is recorded as an Architecture Decision Record (ADR: a short document stating one decision, its context and its consequences, kept in `docs/adr/`).
+Elite Butler moves from a Python prototype to a structured C#/.NET solution. Before choosing libraries or drawing components, this document fixes the **principles** that every architectural decision must respect. When two designs are possible, the one that better satisfies these principles wins. When a principle has to be broken, the exception is recorded as an Architecture Decision Record (ADR: a short document stating one decision, its context and its consequences, kept in `docs/adr/`).
 
 ## 2. Forces: why this is not a traditional application
 
 A conventional desktop tool is deterministic, free to run and fails in predictable ways. Integrating AI services changes that. The architecture has to absorb these forces:
 
-| Force | What it means for Majordomo |
+| Force | What it means for Elite Butler |
 |---|---|
 | **Nondeterminism** | The same prompt can produce a different answer each time. Correctness cannot be checked by comparing with one expected string. |
 | **Metered cost** | Every cloud model call is billed by the amount of text in and out. Cost grows with usage, not with installs. |
@@ -61,7 +62,7 @@ Every AI capability is consumed through a narrow contract: chat (for the languag
 *Implies:* use `Microsoft.Extensions.AI` contracts (`IChatClient`, `IEmbeddingGenerator`), which are designed to be wrapped in such layers; define our own `ISpeechToText` and `ITextToSpeech`.
 
 **AP-03 · One application, clear modules, events inside.**
-Majordomo is a *modular monolith*: a single .NET host process made of well-separated modules (one assembly each) that talk through in-process events and interfaces. No microservices, no servers for the player to install or run. Helper processes are allowed only under AP-18, started and supervised by the host, invisible to the player.
+Elite Butler is a *modular monolith*: a single .NET host process made of well-separated modules (one assembly each) that talk through in-process events and interfaces. No microservices, no servers for the player to install or run. Helper processes are allowed only under AP-18, started and supervised by the host, invisible to the player.
 *Why:* one user on one machine; a distributed system would add failure modes and install friction without benefit.
 *Implies:* the host owns the lifecycle of everything it runs; the player starts and stops one application.
 
@@ -105,8 +106,8 @@ Critical alerts, useful comments, replies and chatter travel in separate bounded
 *Implies:* `System.Threading.Channels` with bounded capacity per lane; text-to-speech supports interruption; the P0 path is covered by a latency test.
 
 **AP-11 · Be a good guest on a gaming PC.**
-Majordomo declares and respects resource limits: local models load lazily, run at reduced priority, and can be swapped for cloud services when the GPU is busy.
-*Why:* if Majordomo costs frame rate, players uninstall it.
+Elite Butler declares and respects resource limits: local models load lazily, run at reduced priority, and can be swapped for cloud services when the GPU is busy.
+*Why:* if Elite Butler costs frame rate, players uninstall it.
 *Implies:* memory and CPU budgets are measured in a one-hour replay; GPU use by local speech models is opt-in.
 
 ### D. Verifiability
@@ -208,16 +209,16 @@ A first mapping, to be confirmed in a stack decision ADR after a short prototype
 ### Module sketch (to be refined in the architecture document)
 
 ```
-Majordomo.Core        domain: events, game state, Director, routing, Fact guard, budgets   (no dependencies)
-Majordomo.Game        Journal, Status.json and NavRoute.json watchers, normaliser          → Core
-Majordomo.Content     personas, banks, command catalogue, prompt assets, schemas           → Core
-Majordomo.Tools       game-state, Spansh, EDSM, market, blueprint and memory tools         → Core
-Majordomo.AI          chat pipeline, prompt builder, redaction, budget ledger adapter      → Core, Content
-Majordomo.Speech      speech-to-text, text-to-speech, audio devices, push-to-talk,         → Core
-                      worker supervisor and worker clients (AP-18)
-Majordomo.Memory      SQLite episodes, facts, relationship counters                        → Core
-Majordomo.App         composition root, configuration, user interface                      → all
-Majordomo.Tests / Majordomo.Evals
+EliteButler.Core        domain: events, game state, Director, routing, Fact guard, budgets   (no dependencies)
+EliteButler.Game        Journal, Status.json and NavRoute.json watchers, normaliser          → Core
+EliteButler.Content     personas, banks, command catalogue, prompt assets, schemas           → Core
+EliteButler.Tools       game-state, Spansh, EDSM, market, blueprint and memory tools         → Core
+EliteButler.AI          chat pipeline, prompt builder, redaction, budget ledger adapter      → Core, Content
+EliteButler.Speech      speech-to-text, text-to-speech, audio devices, push-to-talk,         → Core
+                        worker supervisor and worker clients (AP-18)
+EliteButler.Memory      SQLite episodes, facts, relationship counters                        → Core
+EliteButler.App         composition root, configuration, user interface                      → all
+EliteButler.Tests / EliteButler.Evals
 
 workers/tts-python/   Python text-to-speech worker, if the spike justifies it (AP-18)
 tools/                Python build-time tools: variant generator, evaluation analysis, index builder

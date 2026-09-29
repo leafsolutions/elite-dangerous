@@ -1,10 +1,12 @@
-# Majordomo — When the AI speaks: the tiered response model
+# Elite Butler — When the AI speaks: the tiered response model
 
-*Specification · v0.1 · 2026-09-29 · companion to `DESIGN.md` (v0.2)*
+*Specification · v0.2 · 2026-09-29 · companion to `DESIGN.md` (v0.3)*
+
+*Changes in v0.2: project renamed from Majordomo to Elite Butler; no other changes.*
 
 ## 1. Purpose
 
-This document decides, for every situation in which Majordomo might speak, **which machinery produces the words**: a pre-written line, a deterministic lookup, or a call to a large language model. The goal is a companion that feels alive while keeping model calls rare, deliberate and budgeted.
+This document decides, for every situation in which Elite Butler might speak, **which machinery produces the words**: a pre-written line, a deterministic lookup, or a call to a large language model. The goal is a companion that feels alive while keeping model calls rare, deliberate and budgeted.
 
 ## 2. Terms used here
 
