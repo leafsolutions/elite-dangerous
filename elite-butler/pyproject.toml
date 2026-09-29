@@ -18,11 +18,11 @@ dev = ["pytest>=8"]
 majordomo = "majordomo.cli:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["prototypes"]
 
 [tool.setuptools.package-data]
 majordomo = ["personas/*.yaml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["prototypes"]
