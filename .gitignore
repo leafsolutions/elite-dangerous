@@ -1,0 +1,84 @@
+# Repository-wide ignore rules for Majordomo.
+# See majordomo/docs/ARCHITECTURE-PRINCIPLES.md, AP-19: nothing secret or personal in the repository.
+
+# ── Secrets and local configuration ─────────────────────────────────────────
+.env
+.env.*
+!.env.example
+secrets.json
+appsettings.Local.json
+appsettings.*.Local.json
+*.local.json
+*.local.yaml
+*.pfx
+*.p12
+*.pem
+*.key
+
+# ── Runtime and personal data (lives under %LOCALAPPDATA%, never here) ──────
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+logs/
+traces/
+recordings/
+# Game files copied by mistake: Journal logs and companion JSON files.
+# Sanitised copies belong in samples/ or test fixtures only.
+*.log
+!**/samples/*.log
+!**/fixtures/**/*.log
+Status.json
+NavRoute.json
+Cargo.json
+Market.json
+Outfitting.json
+Shipyard.json
+ModulesInfo.json
+ShipLocker.json
+Backpack.json
+FCMaterials.json
+
+# ── Local AI models (downloaded, never committed) ──────────────────────────
+*.onnx
+*.gguf
+*.safetensors
+*.pt
+ggml-*.bin
+models/
+
+# ── .NET ────────────────────────────────────────────────────────────────────
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.rsuser
+*.DotSettings.user
+TestResults/
+*.trx
+*.coverage
+coverage*.xml
+publish/
+*.nupkg
+
+# ── Python (prototype, workers, build-time tools) ───────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+
+# ── Editors and operating systems ───────────────────────────────────────────
+.idea/
+.vscode/*
+!.vscode/extensions.json
+Thumbs.db
+Desktop.ini
+.DS_Store

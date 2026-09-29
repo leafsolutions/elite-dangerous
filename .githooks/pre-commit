@@ -1,0 +1,48 @@
+#!/bin/sh
+# Pre-commit secret scan (AP-19: nothing secret or personal in the repository).
+#
+# Scans the staged changes with gitleaks and blocks the commit if it finds
+# API keys, tokens, connection strings or Journal personal data.
+#
+# Enable once per clone:   git config core.hooksPath .githooks
+# Requires gitleaks 8.25 or later:
+#   Windows:  winget install Gitleaks.Gitleaks   (or: scoop install gitleaks)
+#   Others:   https://github.com/gitleaks/gitleaks#installing
+# Bypass only after checking a false positive: git commit --no-verify
+
+MIN_MAJOR=8
+MIN_MINOR=25
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "[pre-commit] gitleaks is not installed: commit blocked." >&2
+  echo "  Windows: winget install Gitleaks.Gitleaks  (or: scoop install gitleaks)" >&2
+  echo "  Others:  https://github.com/gitleaks/gitleaks#installing" >&2
+  exit 1
+fi
+
+version=$(gitleaks version 2>/dev/null | head -n 1 | sed 's/^v//')
+major=${version%%.*}
+rest=${version#*.}
+minor=${rest%%.*}
+case "$major$minor" in
+  ''|*[!0-9]*)
+    echo "[pre-commit] could not read the gitleaks version ('$version'); continuing." >&2 ;;
+  *)
+    if [ "$major" -lt "$MIN_MAJOR" ] || { [ "$major" -eq "$MIN_MAJOR" ] && [ "$minor" -lt "$MIN_MINOR" ]; }; then
+      echo "[pre-commit] gitleaks $version is too old (need $MIN_MAJOR.$MIN_MINOR or later): commit blocked." >&2
+      exit 1
+    fi ;;
+esac
+
+root=$(git rev-parse --show-toplevel) || exit 1
+
+gitleaks git --pre-commit --staged --redact --verbose --no-banner \
+  --config "$root/.gitleaks.toml" "$root"
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  echo "" >&2
+  echo "[pre-commit] possible secret or personal data in staged changes: commit blocked." >&2
+  echo "  Remove it from the staged files. If it is a false positive, adjust .gitleaks.toml." >&2
+fi
+exit "$status"
