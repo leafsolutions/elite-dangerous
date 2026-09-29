@@ -1,0 +1,33 @@
+# Gitleaks configuration for Majordomo (AP-19).
+# Uses the full default ruleset (API keys, tokens, private keys, connection strings…)
+# and adds rules for personal data that appears in Elite Dangerous Journal files.
+
+title = "Majordomo secret and personal-data scan"
+
+[extend]
+useDefault = true
+
+# Frontier account ID, e.g. "FID":"F1234567". Placeholders made of zeros are allowed.
+[[rules]]
+id = "elite-frontier-id"
+description = "Frontier ID from an Elite Dangerous Journal"
+regex = '''"FID"\s*:\s*"(F\d{5,})"'''
+secretGroup = 1
+keywords = ["fid"]
+
+[[rules.allowlists]]
+regexTarget = "secret"
+regexes = ['''^F0+$''']
+
+# Commander name from Journal "Commander" and "LoadGame" events.
+# Samples and fixtures must use fictional names; add them to the allowlist below.
+[[rules]]
+id = "elite-commander-name"
+description = "Commander name from an Elite Dangerous Journal (use a fictional name in samples)"
+regex = '''"event"\s*:\s*"(?:Commander|LoadGame)"[^\n]*?"(?:Name|Commander)"\s*:\s*"([^"]+)"'''
+secretGroup = 1
+keywords = ["commander", "loadgame"]
+
+[[rules.allowlists]]
+regexTarget = "secret"
+regexes = ['''^(?i:jameson|example|test commander)$''']
