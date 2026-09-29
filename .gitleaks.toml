@@ -1,8 +1,8 @@
-# Gitleaks configuration for Majordomo (AP-19).
+# Gitleaks configuration for Elite Butler (AP-19).
 # Uses the full default ruleset (API keys, tokens, private keys, connection strings…)
 # and adds rules for personal data that appears in Elite Dangerous Journal files.
 
-title = "Majordomo secret and personal-data scan"
+title = "Elite Butler secret and personal-data scan"
 
 [extend]
 useDefault = true

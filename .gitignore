@@ -1,5 +1,5 @@
-# Repository-wide ignore rules for Majordomo.
-# See majordomo/docs/ARCHITECTURE-PRINCIPLES.md, AP-19: nothing secret or personal in the repository.
+# Repository-wide ignore rules for Elite Butler.
+# See elite-butler/docs/ARCHITECTURE-PRINCIPLES.md, AP-19: nothing secret or personal in the repository.
 
 # ── Secrets and local configuration ─────────────────────────────────────────
 .env
