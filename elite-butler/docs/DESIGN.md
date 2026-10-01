@@ -259,7 +259,7 @@ Replies to the commander (T1 and T2) are described in section 8.
 
 | Milestone | Scope | Done when |
 |---|---|---|
-| **M0 Skeleton** | Watcher, normaliser, Director, template renderer, console voice, replay mode, three personas, tests | `elite-butler replay sample.log` prints a believable session |
+| **M0 Skeleton** | Watcher, normaliser, Director, template renderer, console voice, replay mode, three personas, tests | `majordomo replay samples/sample_session.log` prints a believable session |
 | M1 Voice | Piper TTS, preemption, audio device selection | You hear Ashford in-game |
 | M2 Director tuning | Modes from `Music` and status flags, budget tuning, silence command, conditional lines, utterance log with tier and latency | A 1-hour session feels right |
 | M3 Cached variants | Offline generator plus Fact guard; joke, lore and idle banks | 30 variants per event per persona |

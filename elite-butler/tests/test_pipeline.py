@@ -13,7 +13,7 @@ from majordomo.status import Flags, StatusTracker
 from majordomo.voice import ConsoleVoice
 
 ROOT = Path(__file__).resolve().parents[1]
-PERSONAS = ROOT / "src" / "majordomo" / "personas"
+PERSONAS = ROOT / "prototypes" / "majordomo" / "personas"
 SAMPLE = ROOT / "samples" / "sample_session.log"
 
 

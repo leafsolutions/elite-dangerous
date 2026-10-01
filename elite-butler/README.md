@@ -36,11 +36,15 @@ game state; the companion talks about what happens from then on.
 | `director.py` | Talk budget: priorities, cooldowns, chatter budget, combat rules, staleness, mute |
 | `persona.py` | Persona files, validation, line rendering, Fact guard |
 | `voice.py` | Console voice; offline system voice via pyttsx3 |
+| `events.py` | Typed `GameEvent`s and priorities: the common language between the other modules |
 | `companion.py` | Wires it all together; replay with a clock driven by Journal timestamps |
+| `cli.py` | The `majordomo` command: `live`, `replay`, `personas` |
+
+All modules are in `prototypes/majordomo/`.
 
 ## Personas
 
-Personas live in `src/majordomo/personas/*.yaml`. Copy one, change the lines, run
+Personas live in `prototypes/majordomo/personas/*.yaml`. Copy one, change the lines, run
 `majordomo personas` to validate. Rules:
 
 * Facts only through `{slots}` (`{system}`, `{hull_pct}`, `{pad}`…). Lines for
